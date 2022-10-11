@@ -3,10 +3,12 @@ This AI-Makerspace workshop introduces Data Version Control (DVC), a paradigm sa
 
 ### Chief Reasons to Use DVC
 
-1- Save and reproduce all of your data experiments
-2- Debugging and testing
-3- Compliance and auditing
-4- Align software and data science teams
+<ol>
+  <li>Save and reproduce all of your data experiments</li>
+  <li>Debugging and testing</li>
+  <li>Compliance and auditing</li>
+  <li>Align software and data science teams</li>
+</ol>
 
 
 
