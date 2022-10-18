@@ -39,3 +39,7 @@ The `Global Warming Temperature` dataset used during the workshop is taken from 
 `dvc dag`
 
 `dvc repro`
+
+`dvc remote`
+
+`dvc push` 
