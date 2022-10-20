@@ -37,15 +37,18 @@ The `Global Warming Temperature` dataset used during the workshop is taken from 
 
 ### Commands:
 
+Convert an existing, unversioned project to a Git repository.
 ```bash 
 git init 
 ```
-
-Convert an existing, unversioned project to a Git repository.
-
-`dvc init`:  Initialize a new local DVC repository.
-
-`dvc add kaggle-merged-data/GlobalLand-MainTemperatures.csv`: Makes DVC aware of the target data and start versioning it.
+Initialize a new local DVC repository.
+ ```bash 
+dvc init
+```
+Makes DVC aware of the target data and start versioning it.
+ ```bash 
+dvc add kaggle-merged-data/GlobalLand-MainTemperatures.csv
+```
 
 `dvc run -n filter -d filter.py -d kaggle-merged-data/GlobalLand-MainTemperatures.csv -p filter.value -o output/filter python filter.py`
 
