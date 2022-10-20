@@ -37,7 +37,9 @@ The `Global Warming Temperature` dataset used during the workshop is taken from 
 
 ### Commands:
 
-```bash git init ```
+```bash 
+git init 
+```
 
 Convert an existing, unversioned project to a Git repository.
 
