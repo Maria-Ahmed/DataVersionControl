@@ -10,6 +10,8 @@ This AI-Makerspace workshop introduces Data Version Control (DVC), a paradigm sa
   <li>Align software and data science teams</li>
 </ol>
 
+### Goal
+Discover the need to use DVC and explore it's features in connection with GIT for a data pipeline.  
 
 
 ### Pre-Reqs
@@ -17,7 +19,16 @@ This AI-Makerspace workshop introduces Data Version Control (DVC), a paradigm sa
 - Python3
 - DVC (you can install it from <a href='https://dvc.org/doc/install'>`here`</a>.
 
-
+### Project Structure
+```bash
+Global Mean Temperature Using DVC Project
+├── .dvcignore 
+├── dvc.lock
+├── dvc.yaml
+├── filter.py
+└── params.yaml
+├── training.py
+```
 
 ### Dataset
 At AI MakerSpace, we thoroughly believes in `Sustainable Development Goals`. This is why to show our empathetic inclination towards Climate Change goals, we will be incorporating *Global Temperature Data* to align with DVC basics.
@@ -26,20 +37,22 @@ The `Global Warming Temperature` dataset used during the workshop is taken from 
 
 ### Commands:
 
-`git init`
+```bash git init ```
 
-`dvc init`
+Convert an existing, unversioned project to a Git repository.
 
-`dvc add kaggle-merged-data/GlobalLand-MainTemperatures.csv`
+`dvc init`:  Initialize a new local DVC repository.
+
+`dvc add kaggle-merged-data/GlobalLand-MainTemperatures.csv`: Makes DVC aware of the target data and start versioning it.
 
 `dvc run -n filter -d filter.py -d kaggle-merged-data/GlobalLand-MainTemperatures.csv -p filter.value -o output/filter python filter.py`
 
-`dvc run -n training -p training.num_rows -d training.py -d output/filter -d kaggle-merged-data/GlobalLand-MainTemperatures.csv -o output/training python training.py output/filter`
+`dvc run -n training -p training.num_rows -d training.py -d output/filter -d kaggle-merged-data/GlobalLand-MainTemperatures.csv -o output/training python training.py output/filter`: Helper for creating or updating pipeline stages.
 
-`dvc dag`
+`dvc dag`: Visualize pipelines as one or more stage dependency graphs.
 
-`dvc repro`
+`dvc repro`: Reproduces the whole pipeline in case of changes detected.
 
-`dvc remote`
+`dvc remote add -d`: Add remote storage for DVC projects.
 
-`dvc push` 
+`dvc push`:  Uploads and Downloads data to and from remote storage .
