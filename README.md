@@ -51,15 +51,23 @@ dvc add kaggle-merged-data/GlobalLand-MainTemperatures.csv
 ```
 Helper for creating or updating pipeline stages.
  ```bash 
-`dvc run -n filter -d filter.py -d kaggle-merged-data/GlobalLand-MainTemperatures.csv -p filter.value -o output/filter python filter.py`
+dvc run -n filter -d filter.py -d kaggle-merged-data/GlobalLand-MainTemperatures.csv -p filter.value -o output/filter python filter.py
 
-`dvc run -n training -p training.num_rows -d training.py -d output/filter -d kaggle-merged-data/GlobalLand-MainTemperatures.csv -o output/training python training.py output/filter`: 
+dvc run -n training -p training.num_rows -d training.py -d output/filter -d kaggle-merged-data/GlobalLand-MainTemperatures.csv -o output/training python training.py output/filter
 ```
-
-`dvc dag`: Visualize pipelines as one or more stage dependency graphs.
-
-`dvc repro`: Reproduces the whole pipeline in case of changes detected.
-
-`dvc remote add -d`: Add remote storage for DVC projects.
-
-`dvc push`:  Uploads and Downloads data to and from remote storage .
+Visualizes pipelines as one or more stage dependency graphs.
+ ```bash
+dvc dag
+```
+Reproduces the whole pipeline in case of changes detected.
+ ```bash
+dvc repro
+```
+Add remote storage for DVC projects.
+ ```bash
+dvc remote add -d 
+```
+Uploads and Downloads data to and from remote storage.
+ ```bash
+dvc push
+```
